@@ -1,0 +1,725 @@
+{
+	"destination": "detailScreen",
+	"windowSizingX": "fixed",
+	"windowSizingY": "fixed",
+	"menuBar": "Menu Bar #1",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onUnload",
+		"onTimer",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Tab Control": {
+					"type": "tab",
+					"top": 22,
+					"left": 23,
+					"width": 1020,
+					"height": 800,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "_TabTitles",
+					"dataSourceTypeHint": "arrayText",
+					"action": "gotoPage",
+					"events": [
+						"onClick"
+					]
+				},
+				"ViewProArea": {
+					"type": "view",
+					"left": 279,
+					"top": 58,
+					"width": 753,
+					"height": 747,
+					"userInterface": "ribbon",
+					"withFormulaBar": false,
+					"events": [
+						"onVPReady"
+					],
+					"method": "ObjectMethods/ViewProArea.4dm",
+					"dataSource": "VPArea"
+				},
+				"Trace": {
+					"type": "checkbox",
+					"text": "Trace",
+					"top": 798,
+					"left": 29,
+					"width": 117,
+					"height": 18,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.trace",
+					"sizingY": "move"
+				}
+			}
+		},
+		{
+			"objects": {
+				"information": {
+					"type": "input",
+					"top": 122,
+					"left": 51,
+					"width": 966,
+					"height": 640,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "Infos[0].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"newTabVisible": {
+					"type": "checkbox",
+					"dataSource": "Form:C1466.wbOptions.newTabVisible",
+					"text": "New tab visible",
+					"top": 268,
+					"left": 48,
+					"width": 161,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/Check Box11.4dm"
+				},
+				"tabStripVisible": {
+					"type": "checkbox",
+					"dataSource": "Form:C1466.wbOptions.tabStripVisible",
+					"text": "Tab strip visible",
+					"top": 235,
+					"left": 48,
+					"width": 181,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/Check Box8.4dm"
+				},
+				"tabEditable": {
+					"type": "checkbox",
+					"dataSource": "Form:C1466.wbOptions.tabEditable",
+					"text": "Tab editable",
+					"top": 301,
+					"left": 48,
+					"width": 181,
+					"height": 21,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/Check Box10.4dm"
+				},
+				"Text6": {
+					"type": "text",
+					"text": "Tab strip ratio:",
+					"top": 484,
+					"left": 48,
+					"width": 99,
+					"height": 15
+				},
+				"tabNavigationVisible": {
+					"type": "checkbox",
+					"dataSource": "Form:C1466.wbOptions.tabNavigationVisible",
+					"text": "Tab navigation visible",
+					"top": 324,
+					"left": 48,
+					"width": 161,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/tabNavigationVisible.4dm"
+				},
+				"allowSheetReorder": {
+					"type": "checkbox",
+					"dataSource": "Form:C1466.wbOptions.allowSheetReorder",
+					"text": "Allow sheet reorder",
+					"top": 358,
+					"left": 48,
+					"width": 161,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/Check Box2.4dm"
+				},
+				"Popup Dropdown List": {
+					"type": "dropdown",
+					"left": 157,
+					"top": 552,
+					"width": 116,
+					"height": 20,
+					"events": [
+						"onDataChange"
+					],
+					"dataSource": "Form:C1466.enum.tabStripPosition",
+					"dataSourceTypeHint": "object",
+					"method": "ObjectMethods/Popup Dropdown List.4dm"
+				},
+				"Text8": {
+					"type": "text",
+					"text": "Tab position:",
+					"top": 555,
+					"left": 47,
+					"width": 99,
+					"height": 15
+				},
+				"tabStripWidth_text": {
+					"type": "text",
+					"text": "Tab strip width:",
+					"top": 672,
+					"left": 47,
+					"width": 117,
+					"height": 15
+				},
+				"Text14": {
+					"type": "text",
+					"text": "If the tab position is left or right, set the width of the tab strip area:",
+					"top": 630,
+					"left": 47,
+					"width": 219,
+					"height": 30
+				},
+				"Text15": {
+					"type": "text",
+					"text": "Use these options to change the appearance and behavior of the tab strip:",
+					"top": 185,
+					"left": 37,
+					"width": 236,
+					"height": 45
+				},
+				"Text5": {
+					"type": "text",
+					"text": "Tab strip ratio specifies the width ratio. It compares the width of the TabStrip and the width of the Spread instance (between 0 and 1):",
+					"top": 409,
+					"left": 47,
+					"width": 218,
+					"height": 60
+				},
+				"Ruler": {
+					"type": "ruler",
+					"left": 152,
+					"top": 483,
+					"width": 121,
+					"height": 16,
+					"max": 1,
+					"events": [
+						"onDataChange"
+					],
+					"dataSource": "Form:C1466.wbOptions.tabStripRatio",
+					"dataSourceTypeHint": "number",
+					"step": 0,
+					"graduationStep": 0,
+					"method": "ObjectMethods/Ruler.4dm"
+				},
+				"tabStripWidth": {
+					"type": "input",
+					"left": 160,
+					"top": 671,
+					"width": 113,
+					"height": 16,
+					"dataSource": "Form:C1466.wbOptions.tabStripWidth",
+					"dataSourceTypeHint": "integer",
+					"method": "ObjectMethods/tabStripWidth.4dm",
+					"events": [
+						"onDataChange"
+					]
+				}
+			},
+			"entryOrder": [
+				"newTabVisible",
+				"tabStripVisible",
+				"tabEditable",
+				"tabNavigationVisible",
+				"allowSheetReorder",
+				"Popup Dropdown List",
+				"Ruler",
+				"tabStripWidth"
+			]
+		},
+		{
+			"objects": {
+				"scrollbarShowMax": {
+					"type": "checkbox",
+					"dataSource": "Form:C1466.wbOptions.scrollbarShowMax",
+					"text": "Scroll bar show max",
+					"top": 247,
+					"left": 42,
+					"width": 161,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/Check Box6.4dm"
+				},
+				"scrollbarMaxAlign": {
+					"type": "checkbox",
+					"dataSource": "Form:C1466.wbOptions.scrollbarMaxAlign",
+					"text": "Scroll bar max align",
+					"top": 278,
+					"left": 42,
+					"width": 161,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/Check Box7.4dm"
+				},
+				"showScrollTip": {
+					"type": "checkbox",
+					"dataSource": "Form:C1466.wbOptions.showScrollTip",
+					"text": "Show scroll tip",
+					"top": 309,
+					"left": 42,
+					"width": 161,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/Check Box17.4dm"
+				},
+				"showHorizontalScrollbar": {
+					"type": "checkbox",
+					"dataSource": "Form:C1466.wbOptions.showHorizontalScrollbar",
+					"text": "Show horizontal scrollbar",
+					"top": 185,
+					"left": 42,
+					"width": 161,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/Check Box4.4dm"
+				},
+				"showVerticalScrollbar": {
+					"type": "checkbox",
+					"dataSource": "Form:C1466.wbOptions.showVerticalScrollbar",
+					"text": "Show vertical scroll bar",
+					"top": 216,
+					"left": 42,
+					"width": 161,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/Check Box5.4dm"
+				},
+				"showVerticalScrollbar1": {
+					"type": "checkbox",
+					"dataSource": "Form:C1466.wbOptions.scrollbarAppearance",
+					"text": "Show appearance mobile",
+					"top": 341,
+					"left": 42,
+					"width": 161,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/showVerticalScrollbar1.4dm"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Text": {
+					"type": "text",
+					"text": "Back color:",
+					"top": 592,
+					"left": 40,
+					"width": 79,
+					"height": 15
+				},
+				"Text2": {
+					"type": "text",
+					"text": "Background layout:",
+					"top": 264,
+					"left": 46,
+					"width": 116,
+					"height": 15
+				},
+				"Text3": {
+					"type": "text",
+					"text": "Gray area back color:",
+					"top": 425,
+					"left": 43,
+					"width": 116,
+					"height": 15
+				},
+				"Popup Dropdown List1": {
+					"type": "dropdown",
+					"left": 159,
+					"top": 260,
+					"width": 103,
+					"height": 23,
+					"events": [
+						"onDataChange"
+					],
+					"dataSource": "Form:C1466.enum.backgroundImageLayout",
+					"method": "ObjectMethods/Popup Dropdown List1.4dm"
+				},
+				"Button2": {
+					"type": "button",
+					"text": "Add background image",
+					"top": 185,
+					"left": 43,
+					"width": 155,
+					"height": 22,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button2.4dm"
+				},
+				"Button3": {
+					"type": "button",
+					"text": "Remove background image",
+					"top": 222,
+					"left": 43,
+					"width": 155,
+					"height": 22,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button3.4dm"
+				},
+				"Text11": {
+					"type": "text",
+					"text": "Select a color to set as color of the workbook gray area.",
+					"top": 376,
+					"left": 45,
+					"width": 222,
+					"height": 30
+				},
+				"Popup Dropdown List4": {
+					"type": "dropdown",
+					"left": 159,
+					"top": 588,
+					"width": 103,
+					"height": 23,
+					"events": [
+						"onDataChange"
+					],
+					"dataSource": "Form:C1466.enum.backColor",
+					"method": "ObjectMethods/Popup Dropdown List4.4dm"
+				},
+				"Popup Dropdown List5": {
+					"type": "dropdown",
+					"left": 159,
+					"top": 421,
+					"width": 103,
+					"height": 23,
+					"events": [
+						"onDataChange"
+					],
+					"dataSource": "Form:C1466.enum.grayAreaBackColor",
+					"method": "ObjectMethods/Popup Dropdown List5.4dm"
+				},
+				"Popup Dropdown List6": {
+					"type": "dropdown",
+					"left": 159,
+					"top": 260,
+					"width": 103,
+					"height": 23,
+					"events": [
+						"onDataChange"
+					],
+					"dataSource": "Form:C1466.enum.backgroundImageLayout",
+					"method": "ObjectMethods/Popup Dropdown List6.4dm"
+				},
+				"Text12": {
+					"type": "text",
+					"text": "Select a color to set as workbook background color. (Remove background image to see this change.)",
+					"top": 528,
+					"left": 40,
+					"width": 214,
+					"height": 45
+				}
+			}
+		},
+		{
+			"objects": {
+				"Text1": {
+					"type": "text",
+					"text": "Column resize mode:",
+					"top": 290,
+					"left": 33,
+					"width": 134,
+					"height": 15
+				},
+				"Text10": {
+					"type": "text",
+					"text": "Row resize mode:",
+					"top": 528,
+					"left": 33,
+					"width": 134,
+					"height": 15
+				},
+				"Popup Dropdown List2": {
+					"type": "dropdown",
+					"left": 165,
+					"top": 283,
+					"width": 108,
+					"height": 22,
+					"events": [
+						"onDataChange"
+					],
+					"dataSource": "Form:C1466.enum.columnResizeMode",
+					"method": "ObjectMethods/Popup Dropdown List2.4dm"
+				},
+				"Popup Dropdown List3": {
+					"type": "dropdown",
+					"left": 165,
+					"top": 524,
+					"width": 108,
+					"height": 22,
+					"events": [
+						"onDataChange"
+					],
+					"dataSource": "Form:C1466.enum.rowResizeMode",
+					"method": "ObjectMethods/Popup Dropdown List3.4dm"
+				},
+				"Text4": {
+					"type": "text",
+					"text": "Set Column Resize Mode to split. Now change the width of column A. Column B will automatically resize while the remaining columns will stay the same size.",
+					"top": 185,
+					"left": 33,
+					"width": 191,
+					"height": 90
+				},
+				"Text7": {
+					"type": "text",
+					"text": "Set Row Resize Mode to split. Now change the height of row 1. Row 2 will automatically resize while the remaining rows will stay the same size.",
+					"top": 433,
+					"left": 33,
+					"width": 240,
+					"height": 75
+				}
+			}
+		},
+		{
+			"objects": {
+				"cutCopyIndicatorVisible": {
+					"type": "checkbox",
+					"dataSource": "Form:C1466.wbOptions.cutCopyIndicatorVisible",
+					"text": "cut copy visible",
+					"top": 253,
+					"left": 39,
+					"width": 161,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/Check Box12.4dm"
+				},
+				"Text9": {
+					"type": "text",
+					"text": "cut copy border color:",
+					"top": 284,
+					"left": 39,
+					"width": 117,
+					"height": 15
+				},
+				"allowExtendPasteRange": {
+					"type": "checkbox",
+					"text": "Extend paste range:",
+					"top": 519,
+					"left": 39,
+					"width": 207,
+					"height": 27,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.wbOptions.allowExtendPasteRange",
+					"method": "ObjectMethods/allowExtendPasteRange.4dm"
+				},
+				"Paste button": {
+					"type": "button",
+					"text": "Paste",
+					"top": 551,
+					"left": 39,
+					"width": 152,
+					"height": 37,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Paste button.4dm"
+				},
+				"Text13": {
+					"type": "text",
+					"text": "Check the \"Extend paste range\" box to automatically extend the current size of your document if part of the paste range is pasted outside the document.",
+					"top": 445,
+					"left": 39,
+					"width": 205,
+					"height": 75
+				},
+				"Text16": {
+					"type": "text",
+					"text": "Do a copy through the menu or a Ctrl+C to display the copy indicator and modify its visibility and color with the options below: ",
+					"top": 185,
+					"left": 39,
+					"width": 216,
+					"height": 75
+				},
+				"Popup Dropdown List7": {
+					"type": "dropdown",
+					"left": 162,
+					"top": 280,
+					"width": 97,
+					"height": 19,
+					"events": [
+						"onDataChange"
+					],
+					"dataSource": "Form:C1466.enum.cutCopyIndicatorBorderColor",
+					"method": "ObjectMethods/Popup Dropdown List7.4dm"
+				}
+			}
+		},
+		{
+			"objects": {
+				"allowUserResize": {
+					"type": "checkbox",
+					"text": "Allow resize columns & rows",
+					"top": 372,
+					"left": 44,
+					"width": 161,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Check Box.4dm",
+					"dataSourceTypeHint": "boolean",
+					"dataSource": "Form:C1466.wbOptions.allowUserResize"
+				},
+				"allowContextMenu": {
+					"type": "checkbox",
+					"dataSource": "Form:C1466.wbOptions.allowContextMenu",
+					"text": "Allow context menu",
+					"top": 247,
+					"left": 44,
+					"width": 161,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/Check Box3.4dm"
+				},
+				"allowUserEditFormula": {
+					"type": "checkbox",
+					"dataSource": "Form:C1466.wbOptions.allowUserEditFormula",
+					"text": "Allow user edit formula",
+					"top": 185,
+					"left": 44,
+					"width": 161,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/Check Box22.4dm"
+				},
+				"allowUserZoom": {
+					"type": "checkbox",
+					"dataSource": "Form:C1466.wbOptions.allowUserZoom",
+					"text": "Allow user zoom",
+					"top": 278,
+					"left": 44,
+					"width": 161,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/allowUserZoom.4dm"
+				},
+				"allowUserDragDrop": {
+					"type": "checkbox",
+					"text": "Allow user drag & drop",
+					"top": 309,
+					"left": 44,
+					"width": 161,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/allowUserDragDrop.4dm",
+					"dataSourceTypeHint": "boolean",
+					"dataSource": "Form:C1466.wbOptions.allowUserDragDrop"
+				},
+				"allowUserDragFill": {
+					"type": "checkbox",
+					"dataSource": "Form:C1466.wbOptions.allowUserDragFill",
+					"text": "Allow user drag fill",
+					"top": 340,
+					"left": 44,
+					"width": 161,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/allowUserDragFill.4dm"
+				},
+				"allowUndo": {
+					"type": "checkbox",
+					"text": "Allow undo",
+					"top": 221,
+					"left": 44,
+					"width": 153,
+					"height": 17,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.wbOptions.allowUndo",
+					"method": "ObjectMethods/allowUndo.4dm"
+				}
+			}
+		}
+	],
+	"geometryStamp": 3716,
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}
